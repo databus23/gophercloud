@@ -275,6 +275,9 @@ type CreateMemberOpts struct {
 	// The administrative state of the Pool. A valid value is true (UP)
 	// or false (DOWN).
 	AdminStateUp *bool `json:"admin_state_up,omitempty"`
+
+	// Is the member a backup? Backup members only receive traffic when all non-backup members are down.
+	Backup *bool `json:"backup,omitempty"`
 }
 
 // ToMemberCreateMap builds a request body from CreateMemberOpts.
